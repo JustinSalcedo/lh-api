@@ -1,0 +1,36 @@
+{
+    "engines": {
+        "node": ">=20.6.0"
+    },
+    "name": "lh-api",
+    "version": "0.1.0",
+    "description": "Lazy House API",
+    "keywords": [
+        "lazy",
+        "house",
+        "mvp",
+        "api"
+    ],
+    "license": "MIT",
+    "author": "Justin Salcedo",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "dev": "node --env-file=.env --watch -r ts-node/register src/index.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.17",
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.13.9",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "cors": "^2.8.5",
+        "express": "^4.21.2",
+        "mongoose": "^8.12.0"
+    }
+}
