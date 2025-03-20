@@ -40,6 +40,10 @@ export function calculateTotalTaskScore(task: ITask): number {
     if (task.subTasks.length === 0) {
         return (task.done && task.score) || 0
     }
+    if (task.repsDone) {
+        totalScore += task.score || 0
+        return totalScore * task.repsDone
+    }
     for (const subTask of task.subTasks) {
         totalScore += calculateTotalTaskScore(subTask)
     }
