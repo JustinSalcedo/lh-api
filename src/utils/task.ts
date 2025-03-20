@@ -37,12 +37,12 @@ export function generateTasksFromItemInstances(item: IItem): ITask[] {
 
 export function calculateTotalTaskScore(task: ITask): number {
     let totalScore = 0
-    if (task.subTasks.length === 0) {
-        return (task.done && task.score) || 0
-    }
     if (task.repsDone) {
         totalScore += task.score || 0
         return totalScore * task.repsDone
+    }
+    if (task.subTasks.length === 0) {
+        return (task.done && task.score) || 0
     }
     for (const subTask of task.subTasks) {
         totalScore += calculateTotalTaskScore(subTask)
