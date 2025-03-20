@@ -20,9 +20,10 @@ taskController.patch(
                 return
             }
             task.done = req.body.done
-            if (req.body.done && task.reps)
-                task.repsDone = req.body.repsDone || 0
+            console.log('repsDone:', req.body.repsDone)
+            if (task.reps) task.repsDone = req.body.repsDone || 0
             await task.save()
+            console.log('updatedTask:', task)
             res.json(task)
         } catch (error) {
             next(error)
