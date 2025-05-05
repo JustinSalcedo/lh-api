@@ -17,6 +17,7 @@ export const UserSchema = new Schema<IUserDocument>({
     multiplier: {type: Number, default: 1},
     maxMultiplier: {type: Number, required: true},
     balance: {type: Number, default: 0},
+    transactions: [{type: Schema.Types.ObjectId, ref: 'Transaction'}],
 })
 
 export const UserModel = model<IUserDocument>('User', UserSchema)

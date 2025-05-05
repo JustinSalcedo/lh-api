@@ -8,6 +8,7 @@ import masterListController from './controllers/master-list.controller'
 import itemController from './controllers/item.controller'
 import checklistController from './controllers/checklist.controller'
 import taskController from './controllers/task.controller'
+import transactionController from './controllers/transaction.controller'
 
 const app = express()
 const port = process.env.PORT
@@ -40,6 +41,7 @@ app.use('/master', masterListController)
 app.use('/items', itemController)
 app.use('/checklist', checklistController)
 app.use('/tasks', taskController)
+app.use('/transactions', transactionController)
 
 // Error handling
 app.use(errorHandler)

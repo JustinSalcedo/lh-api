@@ -44,7 +44,7 @@ interface IStats {
 }
 
 export function calculateNewUserStatsWithChecklist(
-    user: Omit<IUser, 'checklists' | 'currentChecklist'>,
+    user: Omit<IUser, 'checklists' | 'currentChecklist' | 'transactions'>,
     checklist: IChecklist,
 ): IStats {
     const multiplier = user.multiplier
